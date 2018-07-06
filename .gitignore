@@ -1,0 +1,22 @@
+# IDEA files
+*.iml
+*.ipr
+*.iws
+
+# Build files
+.gradle/*
+gradle/*
+gradlew
+gradlew.bat
+build/*
+droid/build/*
+out/*
+
+# Android SDK properties
+local.properties
+
+# Log files
+*.log
+
+# Dumps and help files
+*.txt
