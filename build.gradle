@@ -1,7 +1,21 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath group: 'org.jetbrains.dokka',
+                name: 'dokka-gradle-plugin',
+                version: '0.9.13'
+    }
+}
+
 plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm' version '1.2.51'
 }
+
+apply plugin: 'org.jetbrains.dokka'
 
 group 'com.github.cheapmon'
 version '0.0'
@@ -24,6 +38,9 @@ dependencies {
     compile group: 'io.github.microutils',
             name: 'kotlin-logging',
             version: '1.4.9'
+    compile group: 'commons-cli',
+            name: 'commons-cli',
+            version: '1.4'
 }
 
 compileKotlin {
@@ -31,4 +48,10 @@ compileKotlin {
 }
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+dokka {
+    outputFormat = 'html'
+    outputDirectory = "$buildDir/javadoc"
+    includes = ['packages.md', 'README.md']
 }
