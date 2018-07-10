@@ -232,7 +232,7 @@ private fun setDevice(device: String?): String {
  * If message is "My message", resulting output is
  * ```
  * My message
- * usage: java MainKt [-h] [-i <arg>] [-f <arg>] [-d <arg>] [-a <arg>] [-m]
+ * usage: java -jar ./build/libs/apc-kotlin-0.0.jar [-h] [-i <arg>] [-f <arg>] [-d <arg>] [-a <arg>] [-m]
  * -h,--help              this help message
  * -i,--ids <arg>         app ids
  * -f,--file <arg>        file containing app ids
@@ -249,7 +249,8 @@ private fun printUsage(message: String = "") {
     }
     with(HelpFormatter()) {
         optionComparator = null
-        printHelp("java MainKt", options, true)
+        width = 120
+        printHelp("java -jar ./build/libs/apc-kotlin-0.0.jar", options, true)
     }
     System.exit(1)
 }
