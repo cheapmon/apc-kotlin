@@ -1,1 +1,3 @@
 rootProject.name = 'apc-kotlin'
+include 'apc'
+include 'droid'

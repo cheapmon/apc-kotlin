@@ -24,7 +24,12 @@ import mu.KotlinLogging
  * @param args command line arguments
  */
 fun main(args: Array<String>) {
-    parse(args)
+    val config = parse(args)
+    with(ADBConnection(config)) {
+        installAPK()
+        runTests()
+        removeAPK()
+    }
 }
 
 /**
@@ -49,5 +54,5 @@ object Logger {
     fun debug(msg: Any?) = logger.debug { msg }
 
     /** Visual delimiter between log messages */
-    fun line() = logger.info { "=".repeat(40) }
+    fun line() = logger.info { "=".repeat(80) }
 }

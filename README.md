@@ -5,13 +5,13 @@ different Android apps.
 
 * Install [`adb`](https://developer.android.com/studio/#command-tools) and 
 [`gradle`](https://gradle.org/install/)
-* Run `gradle clean jar`
+* Run `gradle clean build`
 
 Before you run, attach any Android (virtual) device and enable Android debugging.
 
 ## Usage
 ```
-usage: java -jar ./build/libs/apc-kotlin-0.0.jar [-h] [-i <arg>] [-f <arg>] [-d <arg>] [-a <arg>] [-m]
+usage: java -jar apc-0.0.jar [-h] [-i <arg>] [-f <arg>] [-d <arg>] [-a <arg>] [-m]
  -h,--help              this help message
  -i,--ids <arg>         app ids
  -f,--file <arg>        file containing app ids
